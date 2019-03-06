@@ -24,6 +24,8 @@ import android.widget.TextView
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import com.dragonfly.love.R
+import com.dragonfly.love.ui.main.MainActivity
+import com.oed.commons.utils.startActivity
 
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -49,7 +51,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             false
         })
 
-        email_sign_in_button.setOnClickListener { attemptLogin() }
+        phone_sign_in_button.setOnClickListener { attemptLogin() }
     }
 
     private fun populateAutoComplete() {
@@ -102,6 +104,9 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
      * errors are presented and no actual login attempt is made.
      */
     private fun attemptLogin() {
+
+        startActivity(MainActivity::class)
+
         if (mAuthTask != null) {
             return
         }
@@ -130,7 +135,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             focusView = email
             cancel = true
         } else if (!isEmailValid(emailStr)) {
-            email.error = getString(R.string.error_invalid_email)
+            email.error = getString(R.string.error_invalid_phone)
             focusView = email
             cancel = true
         }

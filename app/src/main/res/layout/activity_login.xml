@@ -9,7 +9,7 @@
               android:paddingLeft="@dimen/activity_horizontal_margin"
               android:paddingRight="@dimen/activity_horizontal_margin"
               android:paddingTop="@dimen/activity_vertical_margin"
-              tools:context=".ui.LoginActivity">
+              tools:context=".ui.login.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -39,7 +39,7 @@
                         android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_email"
+                        android:hint="@string/prompt_phone"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
                         android:singleLine="true"/>
@@ -65,7 +65,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                    android:id="@+id/email_sign_in_button"
+                    android:id="@+id/phone_sign_in_button"
                     style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
